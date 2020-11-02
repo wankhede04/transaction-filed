@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class PaymentService {
+  public paymentCardDetail: ICardDetails;
 
   constructor(private http: HttpClient) {}
 
