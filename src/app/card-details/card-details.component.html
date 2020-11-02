@@ -1,0 +1,67 @@
+<div class="container">
+  <h4>Payment Details</h4>
+  <form class="input-fields" #paymentForm="ngForm">
+    <div class="form-group">
+      <label for="creditCardNumber">Credit Card Number</label>
+      <input type="text" class="form-control" id="creditCardNumber" placeholder="Enter card number" [ngModel]="paymentService.paymentCardDetail.creditCardNumber" #cardNumber=ngModel [ngModelOptions]="{standalone: true}" required>
+      <ng-container
+        *ngIf="cardNumber.invalid && (cardNumber.dirty || cardNumber.touched)"
+      >
+        <div class="error-message">
+          Credit card number is required.
+        </div>
+      </ng-container>
+    </div>
+    <div class="form-group">
+      <label for="cardholder">Cardholder</label>
+      <input type="text" class="form-control" id="cardholder" placeholder="Enter cardholder" [ngModel]="paymentService.paymentCardDetail.cardholder" #holderName="ngModel" [ngModelOptions]="{standalone: true}" required>
+      <ng-container
+        *ngIf="holderName.invalid && (holderName.dirty || holderName.touched)"
+      >
+        <div class="error-message">
+          Card holder is required.
+        </div>
+      </ng-container>
+    </div>
+    <div class="form-group">
+      <label for="expirationDate">Expiration Date (Use date-picker)</label>
+      <input type="date" class="form-control" id="expirationDate" placeholder="Enter expiry date" [ngModel]="paymentService.paymentCardDetail.expirationDate" #expiryDate="ngModel" min="{{currentDate}}" onKeyDown="return false" [ngModelOptions]="{standalone: true}" required>
+      <ng-container
+        *ngIf="expiryDate.invalid && (expiryDate.dirty || expiryDate.touched)"
+      >
+        <div class="error-message">
+          Expiry date is required.
+        </div>
+      </ng-container>
+    </div>
+    <div class="form-group">
+      <label for="securityCode">Security Code</label>
+      <input type="text" class="form-control" id="securityCode" placeholder="Enter security code" [ngModel]="paymentService.paymentCardDetail.securityCode" [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="form-group">
+      <label for="amount">Amount</label>
+      <input type="number" class="form-control" id="amount" placeholder="Enter amount" [ngModel]="paymentService.paymentCardDetail.amount" #paymentAmount="ngModel" [ngModelOptions]="{standalone: true}" required>
+      <ng-container
+        *ngIf="paymentAmount.invalid && (paymentAmount.dirty || paymentAmount.touched)"
+      >
+        <div class="error-message">
+          Amount is required.
+        </div>
+      </ng-container>
+      <br>
+      <ng-container
+        *ngIf="paymentAmount.value <= 0 && paymentAmount.touched"
+      >
+        <div class="error-message">
+          Amount must be greater than 0.
+        </div>
+      </ng-container>
+    </div>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      (click)="submitCardDetails()"
+      [disabled]="paymentForm.invalid"
+    >Submit</button>
+  </form>
+</div>
