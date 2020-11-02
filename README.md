@@ -1,27 +1,28 @@
 # TransactionFiled
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.0.
 
-## Development server
+### This project is a demonstration of-
+- Getting input data from user with validation.
+- Making API request (method=POST) for the input data.
+- Use concepts of RxJS.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## To run the application on development mode.
+### Pre-requisite
+* Node 10 & NPM v6
+* Angular 9
 
-## Code scaffolding
+### Install dependencies
+```bash
+    npm install
+```
+### Run the development server
+```bash
+    ng serve
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Navigate to
+[localhost](http://localhost:4200/)
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+#### Made with :heart: for Filed.
